@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 
 function Complaint() {
   const { user } = useContext(AuthContext);
+
  const [form, setForm] = useState({
     name: '',
     email: '',
@@ -26,7 +27,6 @@ function Complaint() {
   function handleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value });
   }
-
   function handleSubmit(event) {
     event.preventDefault();
     fetch('https://gmz-motors-backend.vercel.app/api/complaints', {
