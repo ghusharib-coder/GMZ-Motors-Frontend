@@ -3,13 +3,25 @@ import { AuthContext } from '../App';
 
 function Complaint() {
   const { user } = useContext(AuthContext);
-  const [form, setForm] = useState({
-    name: user.name || '',
-    email: user.email || '',
-    phone: user.phone || '',
-    complaint: ''
+ const [form, setForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    vehicle: '',
+    date: ''
   });
 
+  // ✅ Sync user data when it becomes available
+  useEffect(() => {
+    if (user) {
+      setForm(prev => ({
+        ...prev,
+        name: user.name || '',
+        email: user.email || '',
+        phone: user.phone || ''
+      }));
+    }
+  }, [user]);
   function handleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value });
   }

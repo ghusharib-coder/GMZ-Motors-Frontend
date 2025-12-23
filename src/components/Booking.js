@@ -4,12 +4,24 @@ import { AuthContext } from '../App';
 function Booking() {
   const { user } = useContext(AuthContext);
   const [form, setForm] = useState({
-    name: user.name || '',
-    email: user.email || '',
-    phone: user.phone || '',
+    name: '',
+    email: '',
+    phone: '',
     vehicle: '',
     date: ''
   });
+
+  // ✅ Sync user data when it becomes available
+  useEffect(() => {
+    if (user) {
+      setForm(prev => ({
+        ...prev,
+        name: user.name || '',
+        email: user.email || '',
+        phone: user.phone || ''
+      }));
+    }
+  }, [user]);
 
   function handleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -53,15 +65,15 @@ function Booking() {
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label className="form-label">Name</label>
-                <input type="text" name="name" className="form-control" value={form.name} readOnly />
+                <input type="text" name="name" className="form-control" value={form.name}  />
               </div>
               <div className="mb-3">
                 <label className="form-label">Email</label>
-                <input type="email" name="email" className="form-control" value={form.email} readOnly />
+                <input type="email" name="email" className="form-control" value={form.email}  />
               </div>
               <div className="mb-3">
                 <label className="form-label">Phone</label>
-                <input type="tel" name="phone" className="form-control" value={form.phone} readOnly />
+                <input type="tel" name="phone" className="form-control" value={form.phone}  />
               </div>
               <div className="mb-3">
                 <label className="form-label">Vehicle</label>

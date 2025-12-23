@@ -42,7 +42,7 @@ function Signup() {
         <input className="form-input mb-3" type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
         <input className="form-input mb-3" type="tel" name="phone" placeholder="Phone" value={form.phone} onChange={handleChange} required />
         <input className="form-input mb-3" type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} required />
-        <button type="submit" className="btn btn-submit w-100">Sign Up</button>
+        <button type="submit" className="btn-submit w-100">Sign Up</button>
       </form>
     </div>
   );
