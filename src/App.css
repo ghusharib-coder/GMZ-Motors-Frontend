@@ -401,3 +401,34 @@ footer a:hover {
 .tiled-image-fallback.paused {
   animation-play-state: paused;
 } */
+ /* Input styling */
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: 0.3s;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 5px rgba(249, 115, 22, 0.5);
+}
+
+/* Button styling */
+.btn-submit {
+  background-color: #f97316;
+  color: white;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #f59e0b;
+  cursor: pointer;
+}

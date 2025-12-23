@@ -58,7 +58,7 @@ function Login() {
           className="form-input mb-3"
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit" className="btn btn-submit w-100">Login</button>
       </form>
     </div>
   );
