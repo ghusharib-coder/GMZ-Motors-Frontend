@@ -46,6 +46,7 @@ function Login() {
           placeholder="Name"
           value={form.name}
           onChange={handleChange}
+          className="form-input mb-3"
           required
         />
         <input
@@ -54,6 +55,7 @@ function Login() {
           placeholder="Password"
           value={form.password}
           onChange={handleChange}
+          className="form-input mb-3"
           required
         />
         <button type="submit">Login</button>

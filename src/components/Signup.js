@@ -38,10 +38,10 @@ function Signup() {
     <div className="container py-5">
       <h1 className="text-center mb-4">Sign Up</h1>
       <form onSubmit={handleSubmit} className="col-md-6 offset-md-3">
-        <input type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
-        <input type="tel" name="phone" placeholder="Phone" value={form.phone} onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} required />
+        <input className="form-input mb-3" type="text" name="name" placeholder="Name" value={form.name} onChange={handleChange} required />
+        <input className="form-input mb-3" type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
+        <input className="form-input mb-3" type="tel" name="phone" placeholder="Phone" value={form.phone} onChange={handleChange} required />
+        <input className="form-input mb-3" type="password" name="password" placeholder="Password" value={form.password} onChange={handleChange} required />
         <button type="submit">Sign Up</button>
       </form>
     </div>
