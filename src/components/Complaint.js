@@ -16,7 +16,7 @@ function Complaint() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    fetch('http://localhost:5000/api/complaints', {
+    fetch('https://gmz-motors-backend.vercel.app/api/complaints', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form)
