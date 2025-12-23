@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../App';
+import { useEffect } from 'react';
 
 function Booking() {
   const { user } = useContext(AuthContext);
