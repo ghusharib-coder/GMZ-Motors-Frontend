@@ -70,11 +70,11 @@ function Booking() {
               </div>
               <div className="mb-3">
                 <label className="form-label">Email</label>
-                <input type="email" name="email" className="form-control" value={form.email}  />
+                <input type="email" name="email" className="form-control"  />
               </div>
               <div className="mb-3">
                 <label className="form-label">Phone</label>
-                <input type="tel" name="phone" className="form-control" value={form.phone}  />
+                <input type="tel" name="phone" className="form-control" />
               </div>
               <div className="mb-3">
                 <label className="form-label">Vehicle</label>

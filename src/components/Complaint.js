@@ -60,11 +60,11 @@ function Complaint() {
               </div>
               <div className="mb-3">
                 <label className="form-label">Email</label>
-                <input type="email" name="email" className="form-control" value={form.email} readOnly />
+                <input type="email" name="email" className="form-control" readOnly />
               </div>
               <div className="mb-3">
                 <label className="form-label">Phone Number</label>
-                <input type="tel" name="phone" className="form-control" value={form.phone} readOnly />
+                <input type="tel" name="phone" className="form-control" readOnly />
               </div>
               <div className="mb-3">
                 <label className="form-label">Complaint Details</label>
