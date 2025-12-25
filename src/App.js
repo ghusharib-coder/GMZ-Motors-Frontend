@@ -24,7 +24,7 @@ function App() {
   useEffect(() => {
     async function fetchUser() {
       try {
-        const res = await fetch('https://gmz-motors-backend.vercel.app/api/user/me', {
+        const res = await fetch('https://gmz-motors-backend.vercel.app/api/user', {
           method: 'GET',
           credentials: 'include', // if using cookies for auth
           headers: { 'Content-Type': 'application/json' },
