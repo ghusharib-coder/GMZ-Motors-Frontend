@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -18,7 +18,32 @@ import keychainImage from './images/keychain.png';
 export const AuthContext = createContext();
 
 function App() {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || null);
+  const [user, setUser] = useState(null); // ✅ no localStorage
+
+  // ✅ Fetch user from backend on app load
+  useEffect(() => {
+    async function fetchUser() {
+      try {
+        const res = await fetch('https://gmz-motors-backend.vercel.app/api/user/me', {
+          method: 'GET',
+          credentials: 'include', // if using cookies for auth
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setUser(data.user); // set the user from backend
+        } else {
+          setUser(null);
+        }
+      } catch (err) {
+        console.error('Failed to fetch user:', err);
+        setUser(null);
+      }
+    }
+
+    fetchUser();
+  }, []);
+
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>

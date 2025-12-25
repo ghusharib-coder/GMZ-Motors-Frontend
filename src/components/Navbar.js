@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../App';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const { user, setUser } = useContext(AuthContext);
@@ -12,34 +13,34 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <div className="container">
-        <a className="navbar-brand" href="/">GMZ Motors</a>
+        <Link className="navbar-brand" to="/">GMZ Motors</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link" href="/">Home</a>
+              <Link className="nav-link" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/pricing">Pricing</a>
+              <Link className="nav-link" to="/pricing">Pricing</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/services">Services</a>
+              <Link className="nav-link" to="/services">Services</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/faq">FAQ</a>
+              <Link className="nav-link" to="/faq">FAQ</Link>
             </li>
             {user ? (
               <>
                 <li className="nav-item">
-                  <a className="nav-link" href="/profile">Profile</a>
+                  <Link className="nav-link" to="/profile">Profile</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/booking">Booking</a>
+                  <Link className="nav-link" to="/booking">Booking</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/complaint">Complaint</a>
+                  <Link className="nav-link" to="/complaint">Complaint</Link>
                 </li>
                 <li className="nav-item">
                   <button style={{color:'white'}} className="nav-link btn btn-link" onClick={handleLogout}>Logout</button>
@@ -48,10 +49,10 @@ function Navbar() {
             ) : (
               <>
                 <li className="nav-item">
-                  <a className="nav-link" href="/login">Login</a>
+                  <Link className="nav-link" to="/login">Login</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/signup">Sign Up</a>
+                  <Link className="nav-link" to="/signup">Sign Up</Link>
                 </li>
               </>
             )}

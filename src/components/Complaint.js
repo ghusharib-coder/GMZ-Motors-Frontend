@@ -10,7 +10,8 @@ function Complaint() {
     email: '',
     phone: '',
     vehicle: '',
-    date: ''
+    date: '',
+    complaint:''
   });
 
   // ✅ Sync user data when it becomes available
